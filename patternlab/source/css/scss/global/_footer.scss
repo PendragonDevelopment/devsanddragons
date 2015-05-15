@@ -1,0 +1,30 @@
+/*------------------------------------*\
+    $FOOTER
+\*------------------------------------*/
+footer {
+  background-color: lighten(black, 11%);
+  color: gray;
+  clear: both;
+  overflow: hidden;
+  padding: 2em 0;
+  font-size: 14px;
+
+  .logo-wrapper {
+    text-align: center;
+    margin: 0 auto 2em;
+
+    a {
+      display: inline-block;
+      width: 100%;
+      max-width: em(200);
+    }
+  }
+
+  @media all and (min-width: $large-screen) {
+    padding: 5em 0 8em;
+  }
+}
+
+.copyright {
+  text-align: center;
+}

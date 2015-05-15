@@ -1,0 +1,95 @@
+/*------------------------------------*\
+    $MEDIA ELEMENTS
+\*------------------------------------*/
+
+/* Flexible Media */
+img, svg, video, object {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+iframe {
+  margin-bottom: $base-spacing;
+}
+
+figure {
+  margin-bottom: $base-spacing;
+  
+  img {
+    margin-bottom: $base-spacing / 2;
+  }
+}
+
+figcaption {
+  font-style: italic;
+}
+
+// Logo 
+.logo-vector {
+  font-size: $base-logo-px;
+  float: left;
+  display: inline-block;
+  fill: $orange;
+  height: 100%;
+  max-height: $base-logo-height;
+
+  header & {
+    $header-offset: 4px;
+    max-width: $base-logo-height + 3; // Keep the rectangular dimensions
+    font-size: $base-logo-px + $header-offset;
+    margin-top: -($header-offset + 1);
+
+    .logo-text {
+      fill: gray;
+    }
+  }
+
+  .thinner & {
+    font-size: $base-logo-px * 0.75;
+    margin-top: 0;
+  }
+
+  footer & {
+    font-size: $base-logo-px * 1.75;
+
+    .logo-text {
+      fill: white;
+    }
+  }
+}
+
+// Wrappers
+.icon-wrapper {
+  height: auto;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  overflow: hidden;
+}
+
+.thumb-wrapper {
+  @extend .icon-wrapper;
+}
+
+.svg-icon {
+  width: 2em;
+  height: 2em;
+}
+
+.video-wrapper {
+    height: 0; width: 100%;    
+    margin: 0 auto $pad;
+    position: relative;
+    padding-bottom: 56.25%; /* 16/9 ratio */
+    overflow: hidden;
+
+    video,
+    iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}

@@ -1,0 +1,7 @@
+.btn {
+  @extend %button;
+
+  .block-hero & {
+    @extend %button-large;
+  }
+}

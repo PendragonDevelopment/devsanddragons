@@ -1,0 +1,44 @@
+header {
+  width: 100%;
+  clear: both;
+}
+
+.header-navigation {
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+  background-color: white;
+  padding: 0.5em 1em;
+  border-bottom: solid 1px lighten($dark-gray, 50%);
+  -webkit-transition: padding 200ms linear;
+  -moz-transition: padding 200ms linear;
+
+  .logo-wrapper {
+    width: 50%;
+
+    @media all and (min-width: $large-screen) {
+      margin-left: 1em;
+      width: em(135);
+    }
+  }
+
+  &.thinner {
+    padding: 0 1em;
+
+    .logo-wrapper {
+      padding: 6px 0 5px;
+    }
+
+    .logo-text {
+      height: 0;
+      width: 0;
+      display: none;
+      -webkit-transition: display 200ms linear;
+      -moz-transition: display 200ms linear;
+    }
+  }
+
+  @media all and (min-width: $large-screen) {
+    padding: 1em 0;
+  }
+}

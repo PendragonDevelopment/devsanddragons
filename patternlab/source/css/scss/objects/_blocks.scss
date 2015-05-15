@@ -1,0 +1,269 @@
+.column-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+//  Block Base
+.block {
+  padding: 3em 5%;
+  @include omega;
+  @include row();
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  .homepage & {
+    text-align: center;
+  }
+
+  &.block-portfolio {
+    padding: 3em 0 0;
+  }
+
+  @media all and (min-width: $x-large-screen) {
+    padding: 6em 0;
+  }
+}
+
+.block-page {
+  padding-top: 3em;
+}
+
+.wrapper {
+  @include outer-container;
+}
+
+.callout {
+  font-size: 18px;
+
+  strong {
+    color: $orange;
+  }
+
+  @media all and (min-width: $large-screen) {
+    font-size: 32px;
+  }
+}
+
+.block-project-info {
+  color: white;
+  text-align: center;
+  padding-left: 5%; padding-right: 5%;
+
+  h1 {
+    margin-bottom: 0;
+  }
+
+  @media all and (min-width: $large-screen) {
+    font-size: 24px;
+
+
+    p {
+      font-size: .85em;
+      max-width: 48em;
+    }
+  }
+}
+
+//  Hero Block 
+.block-hero {
+  color: white;
+  background-color: $dark-gray;
+  background-position: center 54%;  
+  text-align: center;
+
+  .hgroup {
+    font-size: 16px;
+
+    @media all and (min-width: $medium-screen) {
+      font-size: 20px;
+    }
+
+    @media all and (min-width: $large-screen) {
+      font-size: 30px;
+    }
+  }
+
+  h1 {
+    color: inherit;
+    line-height: 1.1;
+  }
+
+  p {
+    margin: 1em auto;
+    overflow: hidden;
+  }
+
+  .btn {
+    margin-top: 1em;
+    font-size: 14px;
+
+    @media all and (min-width: $medium-screen) {
+      font-size: 18px;
+    }
+
+    @media all and (min-width: $large-screen) {
+      font-size: 24px;
+    }
+  }
+
+  @media all and (min-width: $large-screen) {
+    padding-top: 8%;
+    padding-bottom: 8%;
+  }
+}
+
+//  Capabilities Block 
+.block-capabilities {
+  background-color: $lighter-gray;
+
+  h3 {
+    color: $orange;
+    margin: 1em 0 .5em;
+    line-height: 1.2;
+  }
+
+  .capability-block {
+    font-size: 14px;
+    padding: 1em 1.5em;
+    margin-bottom: 2em;
+    flex-basis: 100%;
+
+    .icon-wrapper img,
+    .icon-wrapper svg {
+      max-width: em(194);
+    }
+
+    @media all and (min-width: $medium-screen) {
+      flex-basis: 50%;
+    }
+
+    @media all and (min-width: $x-large-screen) {
+      flex-basis: 33.3333%;
+    }
+  }
+}
+
+//  Why W3BG Block 
+.block-why {
+  @extend .block-capabilities;
+  background-color: $white;
+
+  h3 {
+    color: gray;
+  }
+}
+
+//  Portfolio Block on Homepage
+
+.block-portfolio {
+  padding-bottom: 0;
+  
+  .wrapper > h2 {
+    text-align: center;
+  }  
+
+  // This should totally be a mixin, I need to refactor this later. @TODO
+  $base-thumb-size: 100% !default;
+
+  .thumb-wrapper {
+    @include omega;     
+
+    background-color: black;
+    
+    float: left;
+    height: 0;
+    width: $base-thumb-size / 3;
+    padding-bottom: $base-thumb-size / 3; 
+
+    @media all and (min-width: $medium-screen) {
+      width: $base-thumb-size / 4;
+      padding-bottom: $base-thumb-size / 4;
+    }
+
+    @media all and (min-width: $large-screen) {
+      width: $base-thumb-size / 6;
+      padding-bottom: $base-thumb-size / 6;
+    }
+
+    img:hover {
+      opacity: .5;
+    }
+  }
+
+  .thumb-wrapper.current {   
+    img {
+      opacity: .5;      
+    }   
+  }    
+}
+
+.block-portfolio-content {
+  padding: 3em 0 0;
+
+  .block {
+    padding: 3em 0;
+  }
+}
+
+// Footprint Block 
+.block-footprint {
+  background: white url('../images/3bg_footprint_desktop.jpg') no-repeat bottom center;
+  background-size: cover;
+  min-height: 35em;
+  color: white;
+
+  h2 {
+    color: white;
+  }
+
+  ul {
+    @include columns(2);
+    text-align: center;
+
+    li {
+      margin-bottom: $pad-half;
+      line-height: 2;
+    }
+  }
+}
+
+//  Contact Block 
+.block-contact {
+  background-color: lighten(black, 15%);
+  color: white;
+  text-align: center;
+
+  h3 {
+    @extend h2;
+    margin-bottom: 1em;
+  }
+
+  .contact-info {
+    float: left;
+    width: 100%;
+    text-align: left;
+    padding: $base-spacing 0;
+
+    ul {
+      width: 100%;
+      @include display(flex);
+      @include flex-wrap(wrap);
+      margin-bottom: $base-line-height;
+      margin: 1em;
+      overflow: auto;
+
+      li {
+        @include flex-basis(20em);
+        @include flex-grow(1);
+      }
+    }
+
+    @media all and (min-width: $large-screen) {
+      width: 50%;
+      padding: $base-spacing;
+    }
+  }
+}

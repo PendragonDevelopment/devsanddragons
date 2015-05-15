@@ -1,0 +1,126 @@
+@font-face{
+  font-family:"TradeGothicNextW01-Bold_693232";
+  src:url("../fonts/62cdf702-7113-4955-9b29-d803174650c7.eot?#iefix");
+  src:url("../fonts/62cdf702-7113-4955-9b29-d803174650c7.eot?#iefix") format("eot"),
+      url("../fonts/a43fe47f-004d-4b6d-9a72-23de9e08f66e.woff") format("woff"),
+      url("../fonts/de22c287-e0dc-4287-8a0e-3f68a8788330.ttf") format("truetype"),
+      url("../fonts/d7c320de-0c26-418a-b1d2-ef600169db34.svg#d7c320de-0c26-418a-b1d2-ef600169db34") format("svg");
+}
+@font-face{
+  font-family:"HelveticaNeueW01-55Roma";
+  src:url("../fonts/b7693a83-b861-4aa6-85e0-9ecf676bc4d6.eot?#iefix");
+  src:url("../fonts/b7693a83-b861-4aa6-85e0-9ecf676bc4d6.eot?#iefix") format("eot"),
+      url("../fonts/bcf54343-d033-41ee-bbd7-2b77df3fe7ba.woff") format("woff"),
+      url("../fonts/b0ffdcf0-26da-47fd-8485-20e4a40d4b7d.ttf") format("truetype"),
+      url("../fonts/da09f1f1-062a-45af-86e1-2bbdb3dd94f9.svg#da09f1f1-062a-45af-86e1-2bbdb3dd94f9") format("svg");
+}
+@font-face{
+  font-family:"HelveticaNeueW01-65Medi";
+  src:url("../fonts/07fe0fec-b63f-4963-8ee1-535528b67fdb.eot?#iefix");
+  src:url("../fonts/07fe0fec-b63f-4963-8ee1-535528b67fdb.eot?#iefix") format("eot"),
+      url("../fonts/60be5c39-863e-40cb-9434-6ebafb62ab2b.woff") format("woff"),
+      url("../fonts/4c6503c9-859b-4d3b-a1d5-2d42e1222415.ttf") format("truetype"),
+      url("../fonts/36c182c6-ef98-4021-9b0d-d63122c2bbf5.svg#36c182c6-ef98-4021-9b0d-d63122c2bbf5") format("svg");
+}
+@font-face{
+  font-family:"HelveticaNeueW01-75Bold";
+  src:url("../fonts/c07fef9e-a934-42d7-92ad-69205f2b8a00.eot?#iefix");
+  src:url("../fonts/c07fef9e-a934-42d7-92ad-69205f2b8a00.eot?#iefix") format("eot"),
+      url("../fonts/14ff6081-326d-4dae-b778-d7afa66166fc.woff") format("woff"),
+      url("../fonts/8fda1e47-19be-46c7-8d83-8d4fb35572f0.ttf") format("truetype"),
+      url("../fonts/f751c8ae-1057-46d9-8d74-62592e002568.svg#f751c8ae-1057-46d9-8d74-62592e002568") format("svg");
+}
+
+$webfont-1: "TradeGothicNextW01-Bold_693232";
+$helvetica-1: "HelveticaNeueW01-55Rom";
+$helvetica-2: "HelveticaNeueW01-65Medi";
+$helvetica-3: "HelveticaNeueW01-75Bold";
+
+// Typography
+$sans-serif: $helvetica;
+$serif: $georgia;
+$base-font-family: $sans-serif;
+$header-font-family: $sans-serif;
+$header-font-family-alt: $webfont-1;
+$base-font-weight: 400;
+
+// Font Sizes
+$base-font-size: 1em;
+$small-font-size: $base-font-size * 0.8;
+$h1-font-size: $base-font-size * 2.441;
+$h2-font-size: $base-font-size * 1.953;
+$h3-font-size: $base-font-size * 1.563;
+$h4-font-size: $base-font-size * 1.25;
+$h5-font-size: $base-font-size;
+$h6-font-size: $small-font-size;
+
+// Line height
+$base-line-height: 1.45;
+$header-line-height: 1.5;
+
+// Other Sizes
+$base-border-radius: 5px;
+$base-spacing: $base-line-height * 1em;
+$base-z-index: 0;
+$base-logo-px: 16px !default;
+$base-logo-height: 3em;
+
+// Colors
+$blue: #477DCA;
+$dark-gray: #333;
+$medium-gray: #999;
+$light-gray: #DDD;
+$lighter-gray: #F7F7F7;
+$light-red: #FBE3E4;
+$light-yellow: #FFF6BF;
+$light-green: #E6EFC2;
+$orange: #f02d0d;
+$white: #FFFFFF;
+
+// Background Color
+$base-background-color: white;
+
+// Font Colors
+$base-font-color: $dark-gray;
+$base-accent-color: $orange;
+
+// Link Colors
+$base-link-color: $base-accent-color;
+$hover-link-color: darken($base-accent-color, 15);
+$base-button-color: $base-link-color;
+$hover-button-color: $hover-link-color;
+
+// Flash Colors
+$alert-color: $light-yellow;
+$error-color: $light-red;
+$notice-color: lighten($base-accent-color, 40);
+$success-color: $light-green;
+
+// Border color
+$base-border-color: $light-gray;
+$base-border: 1px solid $base-border-color;
+
+// Forms
+$form-border-color: $base-border-color;
+$form-border-color-hover: darken($base-border-color, 10);
+$form-border-color-focus: $base-accent-color;
+$form-border-radius: $base-border-radius;
+$form-box-shadow: inset 0 1px 1px #ccc;
+$form-box-shadow-focus: $form-box-shadow, 0 0 5px rgba(darken($form-border-color-focus, 5), 0.7);
+$form-font-size: $base-font-size;
+$form-font-family: $base-font-family;
+
+//Layout
+$max-width: 65em;
+
+//Defaults
+$pad : 1em;
+$pad-and-half : $pad*1.5;
+$pad-double : $pad*2;
+$pad-half : $pad/2;
+$pad-quarter :$pad/4;
+
+// Screen Sizes
+$medium-screen: em(480) !default;
+$large-screen: 60em !default;
+$x-large-screen: 70em !default;

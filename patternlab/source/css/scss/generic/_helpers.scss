@@ -1,0 +1,22 @@
+.ui-collapsed {
+    height: 0; max-height: 0;
+    padding: 0; margin: 0;
+    overflow: hidden;
+}
+.ui-expanded { 
+    height: auto; width: 100%;
+    display: block;
+}
+.ui-closed { 
+    display: none;
+    opacity: 0;
+    height: 0; width: 0; 
+    margin-left: -9999px; 
+
+    @media all and (min-width: $large-screen) {
+        height: auto; width: inherit;
+        margin: 0 auto;
+        display: block;
+        opacity: 1;
+    }
+}
