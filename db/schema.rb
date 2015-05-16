@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150516005545) do
+ActiveRecord::Schema.define(version: 20150516005801) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -83,6 +83,18 @@ ActiveRecord::Schema.define(version: 20150516005545) do
 
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id", using: :btree
 
+  create_table "quests", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.integer  "completion_xp"
+    t.integer  "mission_id"
+    t.boolean  "required"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "quests", ["mission_id"], name: "index_quests_on_mission_id", using: :btree
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: ""
@@ -123,4 +135,5 @@ ActiveRecord::Schema.define(version: 20150516005545) do
   add_foreign_key "profile_levels", "levels"
   add_foreign_key "profile_levels", "profiles"
   add_foreign_key "profiles", "users"
+  add_foreign_key "quests", "missions"
 end
