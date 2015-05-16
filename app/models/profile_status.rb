@@ -17,7 +17,6 @@
 #  index_profile_statuses_on_profile_id  (profile_id)
 #
 
-
 class ProfileStatus < ActiveRecord::Base
   belongs_to :profile
   belongs_to :course, foreign_key: "current_course"

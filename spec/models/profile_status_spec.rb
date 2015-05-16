@@ -18,6 +18,7 @@
 #
 
 
+
 require 'rails_helper'
 
 RSpec.describe ProfileStatus, type: :model do

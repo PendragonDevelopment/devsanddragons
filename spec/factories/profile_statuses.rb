@@ -18,6 +18,7 @@
 #
 
 
+
 FactoryGirl.define do
   factory :profile_status do
     current_course 1

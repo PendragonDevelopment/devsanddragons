@@ -11,7 +11,6 @@
 #  updated_at    :datetime         not null
 #
 
-
 class Course < ActiveRecord::Base
   belongs_to :instructor, class: "User"
   has_many :campaigns, dependent: :destroy

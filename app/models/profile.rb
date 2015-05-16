@@ -16,12 +16,12 @@
 #  avatar_file_size    :integer
 #  avatar_updated_at   :datetime
 #  name                :string
+#  bio                 :text
 #
 # Indexes
 #
 #  index_profiles_on_user_id  (user_id)
 #
-
 
 class Profile < ActiveRecord::Base
   belongs_to :user

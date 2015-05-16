@@ -16,6 +16,7 @@
 #
 
 
+
 FactoryGirl.define do
   factory :profile_quest do
     status 1

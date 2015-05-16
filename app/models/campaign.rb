@@ -15,7 +15,6 @@
 #  index_campaigns_on_course_id  (course_id)
 #
 
-
 class Campaign < ActiveRecord::Base
   belongs_to :course
   has_many :missions, dependent: :destroy

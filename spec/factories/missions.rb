@@ -17,6 +17,7 @@
 #
 
 
+
 FactoryGirl.define do
   factory :mission do
     campaign nil
