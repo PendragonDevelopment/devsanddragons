@@ -15,7 +15,6 @@
 #  last_sign_in_ip        :inet
 #  created_at             :datetime
 #  updated_at             :datetime
-#  name                   :string
 #  confirmation_token     :string
 #  confirmed_at           :datetime
 #  confirmation_sent_at   :datetime
@@ -38,6 +37,7 @@
 #  index_users_on_invited_by_id         (invited_by_id)
 #  index_users_on_reset_password_token  (reset_password_token) UNIQUE
 #
+
 
 class User < ActiveRecord::Base
   has_one :profile, dependent: :destroy

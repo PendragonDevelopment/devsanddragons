@@ -16,6 +16,7 @@
 #  index_missions_on_campaign_id  (campaign_id)
 #
 
+
 FactoryGirl.define do
   factory :mission do
     campaign nil

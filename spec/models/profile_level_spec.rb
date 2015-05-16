@@ -14,6 +14,7 @@
 #  index_profile_levels_on_profile_id  (profile_id)
 #
 
+
 require 'rails_helper'
 
 RSpec.describe ProfileLevel, type: :model do

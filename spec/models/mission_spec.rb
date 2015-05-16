@@ -16,6 +16,7 @@
 #  index_missions_on_campaign_id  (campaign_id)
 #
 
+
 require 'rails_helper'
 
 RSpec.describe Mission, type: :model do

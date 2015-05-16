@@ -15,6 +15,7 @@
 #  index_profile_quests_on_quest_id    (quest_id)
 #
 
+
 class ProfileQuest < ActiveRecord::Base
   belongs_to :profile
   belongs_to :quest

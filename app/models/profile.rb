@@ -15,11 +15,13 @@
 #  avatar_content_type :string
 #  avatar_file_size    :integer
 #  avatar_updated_at   :datetime
+#  name                :string
 #
 # Indexes
 #
 #  index_profiles_on_user_id  (user_id)
 #
+
 
 class Profile < ActiveRecord::Base
   belongs_to :user
@@ -29,6 +31,7 @@ class Profile < ActiveRecord::Base
   has_many :quests, through: :profile_quests
   has_one  :profile_status, dependent: :destroy
   delegate :current_level, :completed, :course, :current_missions, :current_campaigns, to: :profile_status
+  after_initialize :set_default_title
 
   has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
