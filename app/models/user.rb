@@ -41,6 +41,7 @@
 
 class User < ActiveRecord::Base
   has_one :profile
+  has_many :courses, foreign_key: "instructor_id"
   enum role: [:user, :vip, :admin]
   after_initialize :set_default_role, :if => :new_record?
   after_initialize :set_default_profile, :if => :new_record?
