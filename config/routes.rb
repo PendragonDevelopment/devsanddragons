@@ -9,7 +9,7 @@
 #                          PATCH  /profiles/:id(.:format)            profiles#update
 #                          PUT    /profiles/:id(.:format)            profiles#update
 #                          DELETE /profiles/:id(.:format)            profiles#destroy
-#  course_campaigns_course GET    /courses/:id/campaigns(.:format)   campaigns#index
+#         campaigns_course GET    /courses/:id/campaigns(.:format)   campaigns#index
 #                  courses GET    /courses(.:format)                 courses#index
 #                          POST   /courses(.:format)                 courses#create
 #               new_course GET    /courses/new(.:format)             courses#new
@@ -18,6 +18,7 @@
 #                          PATCH  /courses/:id(.:format)             courses#update
 #                          PUT    /courses/:id(.:format)             courses#update
 #                          DELETE /courses/:id(.:format)             courses#destroy
+#        missions_campaign GET    /campaigns/:id/missions(.:format)  missions#index
 #                campaigns GET    /campaigns(.:format)               campaigns#index
 #                          POST   /campaigns(.:format)               campaigns#create
 #             new_campaign GET    /campaigns/new(.:format)           campaigns#new
@@ -26,6 +27,7 @@
 #                          PATCH  /campaigns/:id(.:format)           campaigns#update
 #                          PUT    /campaigns/:id(.:format)           campaigns#update
 #                          DELETE /campaigns/:id(.:format)           campaigns#destroy
+#           quests_mission GET    /missions/:id/quests(.:format)     quests#index
 #                 missions GET    /missions(.:format)                missions#index
 #                          POST   /missions(.:format)                missions#create
 #              new_mission GET    /missions/new(.:format)            missions#new
