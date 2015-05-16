@@ -1,0 +1,14 @@
+//  Block Base
+.block {
+  padding: 1em 5%;
+  @include omega;
+  @include row();
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  @media all and (min-width: $x-large-screen) {
+    padding: 1em 0;
+  }
+}

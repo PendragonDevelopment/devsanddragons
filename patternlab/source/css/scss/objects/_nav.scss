@@ -1,0 +1,62 @@
+// Nav menu
+nav {
+  -webkit-transform-style: preserve-3d; // stop webkit flicker
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+  text-align: left;
+  position: relative;
+
+  .icon {
+    display: inline;
+    height: 1em;
+    width: 1em;
+    margin-right: $pad-half;
+  }
+}
+
+.social-nav {
+  display: none;
+
+  li {
+    float: left;
+    margin: $pad-half;
+  }
+
+  @include media($medium-screen) {
+    float: left;
+    display: block;
+  }
+}
+
+.navigation--primary {
+  display: inline-block;
+
+  .navigation-menu {
+    width: 100%;
+    line-height: 1.5;
+  }
+}
+
+// The nav items
+.menu-item {
+  text-decoration: none;
+  background: transparent;
+  color: $base-link-color;
+  display: block;
+  overflow: hidden;  
+  width: 100%;
+  margin-top: $pad-half;
+
+  a {
+    font-weight: bold;
+    display: inline-block;
+    padding: $pad-half $pad;
+    height: 100%;
+
+    &:focus,
+    &:hover {
+      color: $hover-link-color;
+    }
+  }
+}

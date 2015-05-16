@@ -1,0 +1,64 @@
+.ui-visible-all,
+.ui-visible-small,
+.ui-visible-large,
+.ui-visible-huge {
+  display: inherit;
+}
+
+.ui-visible-small {
+  @media all and (min-width: $medium-screen) {
+    display: none;
+  }
+}
+
+.ui-visible-large,
+.ui-visible-huge {
+  display: none;
+  
+  @media all and (min-width: $medium-screen) {
+    display: inherit;
+  }
+}
+
+.ui-hidden-all,
+.ui-hidden-small,
+.ui-hidden-large,
+.ui-hidden-huge {
+  display: none;
+}
+
+.italic {
+  font-style: italic;
+}
+.center {
+  text-align: center;
+}
+.pull-left {
+  float: left;
+}
+.pull-right {
+  float: right;
+}
+
+.ui-collapsed {
+  height: 0; max-height: 0;
+  padding: 0; margin: 0;
+  overflow: hidden;
+}
+.ui-expanded {
+  height: auto; width: 100%;
+  display: block;
+}
+.ui-closed {
+  display: none;
+  opacity: 0;
+  height: 0; width: 0;
+  margin-left: -9999px;
+
+  @media all and (min-width: $large-screen) {
+    height: auto; width: inherit;
+    margin: 0 auto;
+    display: block;
+    opacity: 1;
+  }
+}

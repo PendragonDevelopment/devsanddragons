@@ -1,0 +1,37 @@
+$darkPrimaryColor:   #484937;
+$lightPrimaryColor:  #9EB184;
+$accentColor:        #CE8F2D;
+$primaryTextColor:   #212121;
+$secondaryTextColor: #C9CEDC;
+$dividerColor:       #8A3B2F;
+$black:              #0C0C0C;
+$white:              #F1F0FF;
+$dark-gray: lighten($black, 50);
+
+$alert-color: #FFEB3B;
+$error-color: #E91E63;
+$success-color: #4CAF50;
+$notice-color: lighten($accentColor, 40);
+
+// Base Colors
+$base-font-color: $primaryTextColor;
+$base-background-color: $white !default;
+$base-accent-color: $accentColor;
+
+// Link Colors
+$base-link-color: $base-accent-color;
+$hover-link-color: darken($base-accent-color, 15);
+$base-button-color: $base-link-color;
+$hover-button-color: $hover-link-color;
+
+// Block Colors
+$hero-color: $white;
+$footer-background: desaturate(darken($dividerColor, 20%), 30%);
+$footer-color: $white;
+$footer-link-color: transparentize($footer-color, 0.2);
+$footer-disclaimer-color: transparentize($footer-color, 0.2);
+
+// Border color
+$base-border-color: $dividerColor;
+$featured-border-color: $accentColor;
+$base-border: 1px solid $base-border-color;

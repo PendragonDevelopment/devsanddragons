@@ -1,0 +1,266 @@
+.hero {
+  background: $footer-background url('/images/hero-pl.jpg') no-repeat center center;
+  background-size: cover;
+
+  @include media($large-screen) {
+    font-size: 18px;
+  }
+
+  .hero-inner {
+    @include outer-container;
+    @include clearfix;
+    color: $hero-color;
+    margin: auto;
+    padding: 1rem $pad 3rem;
+    text-align: center;
+
+    .hero-copy {
+      text-align: center;
+
+      p {
+        margin: 0 auto 3rem auto;
+      }
+      
+      .title {
+        margin: 0 auto;
+        font-size: 2rem;
+
+        @include media($large-screen) {
+          font-size: $h1-font-size;
+        }
+      }
+
+      strong {
+        color: $darkPrimaryColor;
+      }
+      
+      a {
+        font-weight: bold;
+      }
+    }
+
+    @include media($large-screen) {
+      padding-top: 2rem;
+    }
+  }
+}
+
+.cards {
+  @extend %flex__wrapper;
+  @include justify-content(space-between);
+}
+
+.card {
+  $card-border: 1px solid $base-border-color;
+  $card-background: lighten($base-border-color, 10%);
+  @extend %flex__box;
+
+  border-radius: $base-border-radius;
+  border: $card-border;
+  box-shadow: 0 2px 4px darken($base-background-color, 10%);
+  cursor: pointer;
+  margin: ($base-spacing / 2) 1%;
+  position: relative;
+
+  @include media($medium-screen) {
+    @include flex-basis(48%);
+  }
+
+  .icon {
+    @extend .wrapper--icon;
+  }
+
+  .card-copy {
+    width: 100%;
+    line-height: 1.5em;
+    display: inline-block;
+  }
+
+  .card-title {
+    @extend h3;
+    line-height: 1.2;
+    color: $darkPrimaryColor;
+    margin: 0;
+  }
+
+  .card-header {
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-bottom: $card-border;
+    border-radius: $base-border-radius $base-border-radius 0 0;
+    text-align: center;
+    padding: ($base-spacing / 3) ($base-spacing / 2);
+    height: 15rem;
+  }
+
+  .listing-info {
+    border-top: $card-border;
+    background-color: white;
+    font-size: 14px;
+    padding: ($base-spacing / 2) ($base-spacing / 2);
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    .card-copy {
+      max-width: 55%;
+      float: left;
+
+      @include media($medium-screen) {
+        max-width: 33%;
+      }
+    }
+    .categories {
+      @include media($medium-screen) {
+        float: right;
+      }
+    }
+  }
+
+  .nexus-score {
+    background: $footer-background no-repeat center;
+    display: inline-block;
+    border-radius: 50%;
+    border: solid 2px white;
+    padding: 1em;
+    margin: 0 auto;
+    width: 45%;
+
+    @include media($medium-screen) {
+      background-image:  url('/images/cxn-badge-bg.svg');
+      display: block;
+      z-index: 9999;
+      height: 9rem;
+      width: 9rem;
+      position: absolute;
+      right: 0;
+      left: 0;
+      bottom: -1em;
+    }
+
+    .score-total {
+      margin: 0;
+      font-size: 2.5em;
+      line-height: 2;
+      font-weight: bold;
+      font-family: $serif;
+      color: white;
+      text-align: center;
+
+      @include media($medium-screen) {
+        line-height: 2.5;
+      }
+
+      @include media($large-screen) {
+        line-height: 7rem;
+      }
+    }
+  }
+
+  .ribbons {
+    margin: 0 auto;
+    .icon {
+      width: 3rem;
+      height: 4rem; 
+    }
+  }
+
+  p {
+    margin: 0 0 ($base-spacing / 2);
+    
+    .icon {
+      width: 1em;
+      height: 1em;
+      fill: $black;
+    }
+  }
+}
+
+.footer {
+  ul {
+    padding: 0;
+  }
+
+  li {
+    list-style: none;
+    line-height: 1.5em;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  background: $footer-background;
+  padding: ($base-spacing * 2) $gutter;
+  width: 100%;
+
+  .footer-logo {
+    margin-bottom: 2em;
+    text-align: center;
+
+    img {
+      height: 3em;
+    }
+  }
+
+  .footer-links {
+    @include clearfix;
+    margin-bottom: $base-spacing;
+
+    @include media($medium-screen) {
+      @include shift(3);
+    }
+  }
+
+  ul {
+    margin-bottom: $base-spacing * 2;
+
+    @include media($medium-screen) {
+      @include span-columns(3);
+      @include omega(3n);
+      @include clearfix;
+    }
+  }
+
+  li {
+    text-align: center;
+
+    @include media($medium-screen) {
+      text-align: left;
+    }
+  }
+
+  li a {
+    color: $footer-link-color;
+
+    &:focus,
+    &:hover {
+      color: transparentize($footer-color, 0);
+    }
+  }
+
+  li h3 {
+    color: $footer-color;
+    font-size: 1.2em;
+    font-weight: 800;
+    margin-bottom: 0.4em;
+  }
+
+  hr {
+    border: 1px solid transparentize($footer-disclaimer-color, 0.3);
+    margin: 0 auto $base-spacing;
+    width: 12em;
+  }
+
+  p {
+    color: $footer-disclaimer-color;
+    font-size: 0.9em;
+    line-height: 1.5em;
+    margin: auto;
+    max-width: 35em;
+    text-align: center;
+  }
+}

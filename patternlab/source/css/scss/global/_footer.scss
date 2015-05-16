@@ -1,0 +1,15 @@
+footer {
+  font-size: 14px;
+  background: $footer-background;
+  width: 100%;
+  display: inline-block;
+  color: white;
+
+  .footer-logo {
+    margin: 1em auto;
+    width: 100%;
+    max-width: 15rem;
+    height: auto;
+    @include clearfix;
+  }
+}

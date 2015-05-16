@@ -1,0 +1,8 @@
+.header--primary {
+  .wrapper {
+    @extend %flex__wrapper;
+    @include justify-content(center);
+    @include align-content(center);
+    padding: $pad;
+  }
+}

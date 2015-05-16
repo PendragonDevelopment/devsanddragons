@@ -1,0 +1,46 @@
+$buttons-list: 'button',
+               'input[type="button"]',
+               'input[type="reset"]',
+               'input[type="submit"]';
+
+$all-buttons:        assign-inputs($buttons-list);
+$all-buttons-active: assign-inputs($buttons-list, active);
+$all-buttons-focus:  assign-inputs($buttons-list, focus);
+$all-buttons-hover:  assign-inputs($buttons-list, hover);
+
+$all-button-inputs:        $all-buttons;
+$all-button-inputs-active: $all-buttons-active;
+$all-button-inputs-focus:  $all-buttons-focus;
+$all-button-inputs-hover:  $all-buttons-hover;
+
+#{$all-buttons} {
+  @extend %button;
+  @include appearance(none);
+  cursor: pointer;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  padding: 0.7em 1em;
+  border-top: none;
+  border-right: solid 1px darken($base-accent-color, 30);
+  border-left: none;
+  border-bottom: solid 2px darken($base-accent-color, 30);
+}
+
+#{$all-buttons-focus},
+#{$all-buttons-hover}, 
+#{$all-buttons-active} {
+  background-color: lighten($base-accent-color, 5);
+  color: white;
+}
+
+%button--hollow {
+  @extend %button;
+  background-color: transparent;
+  border: solid 1px $base-button-color;
+  color: $base-button-color;
+}
+
+%button--large {
+  padding: 0.75em 2em;
+}
