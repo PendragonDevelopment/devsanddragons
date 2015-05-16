@@ -11,6 +11,8 @@
 #
 
 class Level < ActiveRecord::Base
+  has_many :profile_levels, dependent: :destroy
+  has_many :profiles, through: :profile_levels
 
   def previous_level
     id > 1 ? Level.find(id - 1) : "You can't regress more that that!"
