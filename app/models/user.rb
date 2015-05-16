@@ -40,11 +40,11 @@
 #
 
 class User < ActiveRecord::Base
-  has_one :profile
+  has_one :profile, dependent: :destroy
   has_many :courses, foreign_key: "instructor_id"
   enum role: [:user, :vip, :admin]
   after_initialize :set_default_role, :if => :new_record?
-  after_initialize :set_default_profile, :if => :new_record?
+  after_initialize :create_default_profile, :if => :new_record?
 
   def set_default_role
     self.role ||= :user
@@ -56,6 +56,6 @@ class User < ActiveRecord::Base
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :invitable, :database_authenticatable, :registerable, :confirmable,
+  devise :invitable, :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 end

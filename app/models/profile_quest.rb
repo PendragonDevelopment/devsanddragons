@@ -18,6 +18,11 @@
 class ProfileQuest < ActiveRecord::Base
   belongs_to :profile
   belongs_to :quest
+  after_initialize :set_in_progress
 
   enum status: [:in_progress, :submitted, :approved]
+
+  def set_in_progress
+    self.in_progress!
+  end
 end
