@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150516141245) do
+ActiveRecord::Schema.define(version: 20150516141612) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -69,11 +69,11 @@ ActiveRecord::Schema.define(version: 20150516141245) do
 
   create_table "profile_statuses", force: :cascade do |t|
     t.integer  "current_course"
-    t.integer  "current_campaign"
-    t.integer  "current_mission"
+    t.hstore   "current_campaigns"
+    t.hstore   "current_missions"
     t.hstore   "completed"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
   end
 
   create_table "profiles", force: :cascade do |t|
