@@ -34,4 +34,8 @@ class Profile < ActiveRecord::Base
   def current_quests
     profile_quests.in_progress
   end
+
+  def set_default_title
+    self.current_title ||= "Developer Initiate"
+  end
 end

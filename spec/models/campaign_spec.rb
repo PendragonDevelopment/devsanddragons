@@ -18,5 +18,13 @@
 require 'rails_helper'
 
 RSpec.describe Campaign, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  before(:each) {@campaign = Campaign.new(title: "Hartl's Rails Tutorial", completion_xp: 2500)}
+
+  subject { @campaign }
+
+  it { should respond_to(:title) }
+
+  it "has #completion_xp" do
+    expect(@campaign.completion_xp * 1).to eq(@campaign.completion_xp)
+  end
 end

@@ -1,11 +1,4 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
-user = CreateAdminService.new.call
-puts 'CREATED ADMIN USER: ' << user.email
-# Environment variables (ENV['...']) can be set in the file config/application.yml.
-# See http://railsapps.github.io/rails-environment-variables.html
+admin1 = User.create(name: "Jordan Burke", email: "jordan@getvitaminc.com", password: "changeme", password_confirmation: "changeme", role: "admin")
+admin2 = User.create(name: "Sean Reid", email: "sean@torchcodelab.com", password: "changeme", password_confirmation: "changeme", role: "admin")
+user = User.create(name: "Wedge Antilles", email: "pendragondevelopment@gmail.com", password: "changeme", password_confirmation: "changeme")
+puts "Users created: #{User.all.each {|user| puts user.name }}"
