@@ -19,4 +19,12 @@
 class Mission < ActiveRecord::Base
   belongs_to :campaign
   has_many :quests, dependent: :destroy
+
+  def required_quests
+    self.quests.where(required: true)
+  end
+
+  def completed?
+    required_quests
+  end
 end
