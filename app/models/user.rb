@@ -52,6 +52,7 @@ class User < ActiveRecord::Base
 
   def create_default_profile
     self.create_profile!
+    self.profile.create_profile_status!
   end
 
   # Include default devise modules. Others available are:
