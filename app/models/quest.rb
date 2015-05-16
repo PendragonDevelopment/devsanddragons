@@ -18,4 +18,6 @@
 
 class Quest < ActiveRecord::Base
   belongs_to :mission
+  has_many :profile_quests, dependent: :destroy
+  has_many :profiles, through: :profile_quests
 end
