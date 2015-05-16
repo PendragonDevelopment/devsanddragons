@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150516012744) do
+ActiveRecord::Schema.define(version: 20150516141245) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -67,6 +67,15 @@ ActiveRecord::Schema.define(version: 20150516012744) do
   add_index "profile_levels", ["level_id"], name: "index_profile_levels_on_level_id", using: :btree
   add_index "profile_levels", ["profile_id"], name: "index_profile_levels_on_profile_id", using: :btree
 
+  create_table "profile_statuses", force: :cascade do |t|
+    t.integer  "current_course"
+    t.integer  "current_campaign"
+    t.integer  "current_mission"
+    t.hstore   "completed"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
   create_table "profiles", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "twitter"
@@ -90,8 +99,11 @@ ActiveRecord::Schema.define(version: 20150516012744) do
     t.integer  "completion_xp"
     t.integer  "mission_id"
     t.boolean  "required"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+    t.string   "comparison_url"
+    t.integer  "bonus_xp"
+    t.float    "comparison_percentage"
   end
 
   add_index "quests", ["mission_id"], name: "index_quests_on_mission_id", using: :btree

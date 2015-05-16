@@ -2,14 +2,17 @@
 #
 # Table name: quests
 #
-#  id            :integer          not null, primary key
-#  title         :string
-#  description   :text
-#  completion_xp :integer
-#  mission_id    :integer
-#  required      :boolean
-#  created_at    :datetime         not null
-#  updated_at    :datetime         not null
+#  id                    :integer          not null, primary key
+#  title                 :string
+#  description           :text
+#  completion_xp         :integer
+#  mission_id            :integer
+#  required              :boolean
+#  created_at            :datetime         not null
+#  updated_at            :datetime         not null
+#  comparison_url        :string
+#  bonus_xp              :integer
+#  comparison_percentage :float
 #
 # Indexes
 #
