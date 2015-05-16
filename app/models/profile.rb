@@ -28,7 +28,7 @@ class Profile < ActiveRecord::Base
   has_many :profile_quests, dependent: :destroy
   has_many :quests, through: :profile_quests
   has_one  :profile_status, dependent: :destroy
-  delegate :current_level, :completed, :current_course, :current_missions, :current_campaigns, to: :profile_status
+  delegate :current_level, :completed, :course, :current_missions, :current_campaigns, to: :profile_status
 
   has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/

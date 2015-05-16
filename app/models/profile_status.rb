@@ -19,6 +19,7 @@
 
 class ProfileStatus < ActiveRecord::Base
   belongs_to :profile
+  belongs_to :course, foreign_key: "current_course"
   after_initialize :set_default_level
 
   def set_default_level
