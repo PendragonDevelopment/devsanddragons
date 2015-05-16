@@ -1,21 +1,21 @@
 # == Schema Information
 #
-# Table name: campaigns
+# Table name: missions
 #
 #  id            :integer          not null, primary key
+#  campaign_id   :integer
 #  title         :string
 #  description   :text
-#  course_id     :integer
 #  completion_xp :integer
+#  required      :boolean
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
 #
 # Indexes
 #
-#  index_campaigns_on_course_id  (course_id)
+#  index_missions_on_campaign_id  (campaign_id)
 #
 
-class Campaign < ActiveRecord::Base
-  belongs_to :course
-  has_many :missions, dependent: :destroy
+class Mission < ActiveRecord::Base
+  belongs_to :campaign
 end
