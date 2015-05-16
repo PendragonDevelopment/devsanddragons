@@ -8,7 +8,7 @@ rbenv install 2.2.2
 
 rbenv global 2.2.2
 
-cd /the-doctor
+cd /dnd
 
 gem install bundler
 
