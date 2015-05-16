@@ -11,6 +11,7 @@
 #  updated_at    :datetime         not null
 #
 
+
 FactoryGirl.define do
   factory :course do
     title "MyString"

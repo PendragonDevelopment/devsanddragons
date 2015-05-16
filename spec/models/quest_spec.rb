@@ -19,6 +19,7 @@
 #  index_quests_on_mission_id  (mission_id)
 #
 
+
 require 'rails_helper'
 
 RSpec.describe Quest, type: :model do

@@ -15,6 +15,7 @@
 #  index_campaigns_on_course_id  (course_id)
 #
 
+
 FactoryGirl.define do
   factory :campaign do
     title "MyString"

@@ -15,6 +15,7 @@
 #  index_profile_quests_on_quest_id    (quest_id)
 #
 
+
 FactoryGirl.define do
   factory :profile_quest do
     status 1

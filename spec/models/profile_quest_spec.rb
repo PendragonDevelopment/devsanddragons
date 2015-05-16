@@ -15,6 +15,7 @@
 #  index_profile_quests_on_quest_id    (quest_id)
 #
 
+
 require 'rails_helper'
 
 RSpec.describe ProfileQuest, type: :model do

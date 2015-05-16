@@ -14,6 +14,7 @@
 #  index_profile_levels_on_profile_id  (profile_id)
 #
 
+
 FactoryGirl.define do
   factory :profile_level do
     level nil

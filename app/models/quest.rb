@@ -19,6 +19,7 @@
 #  index_quests_on_mission_id  (mission_id)
 #
 
+
 class Quest < ActiveRecord::Base
   belongs_to :mission
   has_many :profile_quests, dependent: :destroy

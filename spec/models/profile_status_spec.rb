@@ -17,6 +17,7 @@
 #  index_profile_statuses_on_profile_id  (profile_id)
 #
 
+
 require 'rails_helper'
 
 RSpec.describe ProfileStatus, type: :model do

@@ -19,6 +19,7 @@
 #  index_quests_on_mission_id  (mission_id)
 #
 
+
 FactoryGirl.define do
   factory :quest do
     title "MyString"

@@ -15,6 +15,7 @@
 #  index_campaigns_on_course_id  (course_id)
 #
 
+
 require 'rails_helper'
 
 RSpec.describe Campaign, type: :model do

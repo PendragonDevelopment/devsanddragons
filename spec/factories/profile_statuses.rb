@@ -17,6 +17,7 @@
 #  index_profile_statuses_on_profile_id  (profile_id)
 #
 
+
 FactoryGirl.define do
   factory :profile_status do
     current_course 1
