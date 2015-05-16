@@ -1,5 +1,5 @@
 html {
-  font-size: $base-font-size;
+  font-size: 100%;
 }
 
 body {
@@ -32,21 +32,19 @@ h6 {
   .hgroup & {
     line-height: 1.2;
   }
-
-  .block-project-info & {
-    color: white;
-    margin: 1em auto;
-  }
-}
-
-h1,
-h2 {
-  font-family: $header-font-family-alt;
 }
 
 h1 {
   margin-top: 0;
   font-size: $h1-font-size;
+
+  &.game-title {
+    font-family: $serif;
+    margin: 0;
+    color: inherit;
+    font-size: $h3-font-size;
+    display: inline-block;
+  }
 }
 
 h2 {

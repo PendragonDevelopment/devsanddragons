@@ -2,8 +2,13 @@
     $MEDIA ELEMENTS
 \*------------------------------------*/
 
+img, svg {
+  width: 100%;
+  height: auto;
+}
+
 /* Flexible Media */
-img, svg, video, object {
+%flexible-media {
   width: 100%;
   max-width: 100%;
   height: auto;
@@ -26,70 +31,42 @@ figcaption {
 }
 
 // Logo 
-.logo-vector {
-  font-size: $base-logo-px;
-  float: left;
+.logo {
+  font-size: inherit;
   display: inline-block;
-  fill: $orange;
-  height: 100%;
-  max-height: $base-logo-height;
-
-  header & {
-    $header-offset: 4px;
-    max-width: $base-logo-height + 3; // Keep the rectangular dimensions
-    font-size: $base-logo-px + $header-offset;
-    margin-top: -($header-offset + 1);
-
-    .logo-text {
-      fill: gray;
-    }
-  }
-
-  .thinner & {
-    font-size: $base-logo-px * 0.75;
-    margin-top: 0;
-  }
-
-  footer & {
-    font-size: $base-logo-px * 1.75;
-
-    .logo-text {
-      fill: white;
-    }
-  }
+  width: 100%;
+  height: auto;
 }
 
 // Wrappers
-.icon-wrapper {
-  height: auto;
-  width: 100%;
+.wrapper--icon {
   margin: 0 auto;
   text-align: center;
   overflow: hidden;
+  display: inline-block;
+
+  svg, img {
+    @extend %flexible-media;
+  }
 }
 
-.thumb-wrapper {
-  @extend .icon-wrapper;
-}
-
-.svg-icon {
-  width: 2em;
-  height: 2em;
+.wrapper--logo {
+  @extend .wrapper--icon;
 }
 
 .video-wrapper {
-    height: 0; width: 100%;    
-    margin: 0 auto $pad;
-    position: relative;
-    padding-bottom: 56.25%; /* 16/9 ratio */
-    overflow: hidden;
+  height: 0; width: 100%;    
+  margin: 0 auto $pad;
+  position: relative;
+  padding-bottom: 56.25%; /* 16/9 ratio */
+  overflow: hidden;
 
-    video,
-    iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
+  video,
+  iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+  }
 }

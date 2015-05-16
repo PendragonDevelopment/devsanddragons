@@ -1,158 +1,62 @@
-.logo-wrapper {
-  height: 100%; 
-  width: 100%;
-  display: inline-block;
-  float: left;
-}
-
+// Nav menu
 nav {
-  margin: 0; padding: 0;
-  z-index: 1000;
+  -webkit-transform-style: preserve-3d; // stop webkit flicker
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+  text-align: left;
   position: relative;
+
+  .icon {
+    display: inline;
+    height: 1em;
+    width: 1em;
+    margin-right: $pad-half;
+  }
 }
 
-.nav-list {
-  position: relative;
-  display: inline-block;
-  float: right;
-  margin: 0; padding: 0;
-  height: auto; width: 100%;
+.social-nav {
+  display: none;
 
   li {
-    display: inline-block;
     float: left;
-    height: auto;
-    width: 100%;
-    text-align: center;
-    margin: 0; padding: 0;
-
-    &:last-child {
-      border-botton: solid 1px $light-gray;
-      margin-right: 0;
-    }
-
-    @media all and (min-width: $large-screen) {
-      width: auto;
-      border: none;
-    }
+    margin: $pad-half;
   }
+
+  @include media($medium-screen) {
+    float: left;
+    display: block;
+  }
+}
+
+.navigation--primary {
+  display: inline-block;
+
+  .navigation-menu {
+    width: 100%;
+    line-height: 1.5;
+  }
+}
+
+// The nav items
+.menu-item {
+  text-decoration: none;
+  background: transparent;
+  color: $base-link-color;
+  display: block;
+  overflow: hidden;  
+  width: 100%;
+  margin-top: $pad-half;
 
   a {
-    height: 100%; width: 100%;
-    line-height: 1;
-    display: inline-block;
-    padding: $pad $pad-quarter;
-    text-transform: capitalize;
-    color: gray;
-    font-family: $helvetica-2;
-    
-    &:hover {
-      color: $orange;
-    }
-
-    @media all and (min-width: $large-screen) {
-      padding: 0 0.65em;
-      line-height: $base-logo-height;
-      float: left;
-    }
-  }
-
-  @media all and (min-width: $large-screen) {
-      width: auto;
-  }
-}
-
-.nav-primary {
-  height: 100%; 
-  width: 100%;
-  float: left;
-  background-color: white;
-
-  li {
-    border-top: solid 1px $light-gray;
-  }
-
-  @media all and (min-width: $large-screen) {
-    width: 80%;
-    float: right;
-    padding-right: 1em;
-
-    .nav-list {
-      float: right;
-
-      li {
-        border-top: none;
-      }
-    }
-  }
-}
-
-.nav-portfolio {
-  width: 100%;
-  margin-top: 3.5em;
-  font-size: 14px;
-
-  .previous {
-    float: left;
-
-    .btn {
-      @include border-right-radius($pad-half);
-      @include border-left-radius(0);
-    }
-  }
-
-  .next {
-    float: right;
-
-    .btn {
-      @include border-right-radius(0);
-      @include border-left-radius($pad-half);
-    }
-  }
-
-  .btn {
-    background-color: lighten(black, 10);
-    color: white;
-    opacity: 0.75;
-    font-weight: 500;
-    padding: $pad;
-
-    &:hover {
-      opacity: 1;
-    }
-  }
-}
-
-.nav-toggle {
-  float: right;
-  display: inline-block;
-  text-transform: uppercase;
-
-  .nav-toggle-menu {
-    color: $dark-gray;
     font-weight: bold;
-    line-height: $base-logo-height;
-  }
+    display: inline-block;
+    padding: $pad-half $pad;
+    height: 100%;
 
-  @media all and (min-width: $large-screen) {
-    display: none;
-  }
-}
-
-.nav-goto-top {
-  position: fixed;
-  height: 3.5em;
-  width: 3.5em;
-  bottom: 10px;
-  right: 10px;
-  opacity: 0.65;
-  color: white;
-
-  &:hover {
-    opacity: 0.95;
-  }
-
-  .btn {
-    background-color: black;
+    &:focus,
+    &:hover {
+      color: $hover-link-color;
+    }
   }
 }

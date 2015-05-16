@@ -29,28 +29,3 @@ dl {
     margin: 0;
   }
 }
-
-// Lists with Icon Bullets
-
-$icon-bullet-size: 2em;
-
-.bullet-icon {
-  float: left;
-  height: $icon-bullet-size;
-  width: auto;
-
-  svg {
-    @extend .svg-icon;
-  }
-}
-
-.bullet-content {
-  margin-left: $icon-bullet-size + 1;
-  margin-bottom: 2em;
-
-  p {
-    display: inline-block;
-    margin-bottom: $icon-bullet-size / 6;
-    padding-top: $icon-bullet-size / 7;
-  }
-}

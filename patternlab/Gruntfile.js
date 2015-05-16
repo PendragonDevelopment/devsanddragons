@@ -23,7 +23,8 @@ module.exports = function(grunt) {
     },
     sass: {
       options: {
-        debugInfo: true
+        sourceMap: true,
+        outputStyle: 'compressed'
       },
       dist: {
         options: {
@@ -44,8 +45,6 @@ module.exports = function(grunt) {
         files: {
           'source/js/main.min.js': [
             '<%= bower.directory %>/jquery/dist/jquery.js',
-            '<%= bower.directory %>//jquery.scrollTo/jquery.scrollTo.js',
-            '<%= bower.directory %>/waypoints/lib/noframework.waypoints.js',
             'source/js/plugins/*.js',
             'source/js/src/*.js'
           ]
@@ -95,7 +94,7 @@ module.exports = function(grunt) {
   // Plugins
   grunt.loadNpmTasks('grunt-shell');
   grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-notify');
