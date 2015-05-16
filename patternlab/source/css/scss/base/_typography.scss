@@ -36,27 +36,31 @@ h6 {
 
 h1 {
   margin-top: 0;
-  font-size: $h1-font-size;
-
-  &.game-title {
-    font-family: $serif;
-    margin: 0;
-    color: inherit;
-    font-size: $h3-font-size;
-    display: inline-block;
+  font-size: $h1-font-size / 2;
+  @media all and (min-width: $large-screen) {
+    font-size: $h1-font-size;
   }
 }
 
 h2 {
-  font-size: $h2-font-size;
+  font-size: $h2-font-size / 2;
+  @media all and (min-width: $large-screen) {
+    font-size: $h2-font-size;
+  }
 }
 
 h3 {
-  font-size: $h3-font-size;
+  font-size: $h3-font-size / 2;
+  @media all and (min-width: $large-screen) {
+    font-size: $h3-font-size;
+  }
 }
 
 h4 {
-  font-size: $h4-font-size;
+  font-size: $h4-font-size / 2;
+  @media all and (min-width: $large-screen) {
+    font-size: $h4-font-size;
+  }
 }
 
 h5 {
@@ -97,16 +101,6 @@ hr {
   border-right: none;
   border-top: none;
   margin: $base-spacing 0;
-
-  &.visual-guide {
-    border: none;
-    background: transparent url('../images/Vertical-Gray-Dots_v1.svg') no-repeat center center;
-    background-size: contain;
-    width: 100%;
-    height: em(192);
-    font-size: 6px;
-    margin: 4em 0 8em;
-  }
 }
 
 img,

@@ -1,18 +1,6 @@
 @import "sprites";
 @import "refills";
 
-.sidebar--main {
-  .logo {
-    max-height: 10rem;
-    fill: $lightPrimaryColor;
-    padding: $pad $pad-half $pad-half;
-  }
-}
-
-.logo--sidebar {
-  background-color: darken($darkPrimaryColor, 10);
-}
-
 .btn {
   @extend %button;
   border: none;
@@ -22,8 +10,8 @@
   @extend .btn;
 }
 
-.title { 
-  color: $footer-color;
+.game-title { 
+  color: $dividerColor;
 }
 
 .emphasis {

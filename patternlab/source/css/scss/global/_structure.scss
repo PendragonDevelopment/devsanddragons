@@ -69,35 +69,6 @@ header, section, footer {
   @include omega;
 }
 
-.sidebar {
-  @include span-columns(4);
-  @include omega;
-  @include display(flex);
-  @include flex-direction(column);
-  @include transition-property(width);
-  @include transition-duration(0.25s);
-  @include transition-timing-function(ease-in);
-  @include transition-delay(0);
-  background-color: $darkPrimaryColor;
-  font-size: 14px;
-  height: 100vh;
-
-  @include media($medium-screen) {
-    font-size: 16px;
-    @include span-columns(3);
-    @include omega;
-  }
-  @include media($large-screen) {
-    @include span-columns(2);
-    @include omega;
-  }
-}
-
-.sidebar--main {
-  @extend .sidebar;
-  position: fixed;
-}
-
 .sidebar--main + .main {
   @include shift(3.4);
   @include media($medium-screen) {
