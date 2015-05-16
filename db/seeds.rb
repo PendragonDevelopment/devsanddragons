@@ -1,11 +1,15 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
-user = CreateAdminService.new.call
-puts 'CREATED ADMIN USER: ' << user.email
-# Environment variables (ENV['...']) can be set in the file config/application.yml.
-# See http://railsapps.github.io/rails-environment-variables.html
+Level.create!(xp_start: 0, xp_end: 100)
+49.times do
+  Level.create!
+end
+admin1 = User.create(email: "jordan@getvitaminc.com", password: "changeme", password_confirmation: "changeme", role: "admin")
+admin1.profile.update_attributes!(name: "Jordan Burke")
+admin2 = User.create(email: "sean@torchcodelab.com", password: "changeme", password_confirmation: "changeme", role: "admin")
+admin2.profile.update_attributes!(name: "Sean Reid")
+test_user = User.create(email: "pendragondevelopment@gmail.com", password: "changeme", password_confirmation: "changeme")
+test_user.profile.update_attributes!(name: "Wedge Antilles")
+puts "Users created: "
+User.all.each {|user| puts user.profile.name }
+admin1.courses.create!(title: "Intro to Rails", description: "Intro to Rails", completion_xp: 5000)
+admin2.courses.create!(title: "Intro to Front End Web Development", description: "Intro to Front End Web Development", completion_xp: 5000)
+test_user.profile.profile_status.update_attributes!(current_course: Course.first.id)
