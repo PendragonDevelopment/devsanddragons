@@ -83,8 +83,16 @@ Rails.application.routes.draw do
       get 'campaigns', to: 'campaigns#index'
     end
   end
-  resources :campaigns
-  resources :missions
+  resources :campaigns do
+    member do
+      get 'missions', to: 'missions#index'
+    end
+  end
+  resources :missions do
+    member do
+      get 'quests', to: 'quests#index'
+    end
+  end
   resources :quests
 
   root to: 'visitors#index'
