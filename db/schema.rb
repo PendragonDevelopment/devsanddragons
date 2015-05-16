@@ -11,10 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150516010949) do
+ActiveRecord::Schema.define(version: 20150516012744) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "hstore"
 
   create_table "campaigns", force: :cascade do |t|
     t.string   "title"
@@ -65,17 +66,6 @@ ActiveRecord::Schema.define(version: 20150516010949) do
 
   add_index "profile_levels", ["level_id"], name: "index_profile_levels_on_level_id", using: :btree
   add_index "profile_levels", ["profile_id"], name: "index_profile_levels_on_profile_id", using: :btree
-
-  create_table "profile_quests", force: :cascade do |t|
-    t.integer  "profile_id"
-    t.integer  "quest_id"
-    t.integer  "status"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "profile_quests", ["profile_id"], name: "index_profile_quests_on_profile_id", using: :btree
-  add_index "profile_quests", ["quest_id"], name: "index_profile_quests_on_quest_id", using: :btree
 
   create_table "profiles", force: :cascade do |t|
     t.integer  "user_id"
@@ -145,8 +135,6 @@ ActiveRecord::Schema.define(version: 20150516010949) do
   add_foreign_key "missions", "campaigns"
   add_foreign_key "profile_levels", "levels"
   add_foreign_key "profile_levels", "profiles"
-  add_foreign_key "profile_quests", "profiles"
-  add_foreign_key "profile_quests", "quests"
   add_foreign_key "profiles", "users"
   add_foreign_key "quests", "missions"
 end
