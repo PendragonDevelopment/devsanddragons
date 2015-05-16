@@ -10,6 +10,7 @@
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
 #  profile_id        :integer
+#  current_level     :integer
 #
 # Indexes
 #

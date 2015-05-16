@@ -10,6 +10,7 @@
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
 #  profile_id        :integer
+#  current_level     :integer
 #
 # Indexes
 #
@@ -18,4 +19,9 @@
 
 class ProfileStatus < ActiveRecord::Base
   belongs_to :profile
+  after_initialize :set_default_level
+
+  def set_default_level
+    update_attributes!(current_level: Level.first.id)
+  end
 end
