@@ -38,7 +38,6 @@
 #  index_users_on_reset_password_token  (reset_password_token) UNIQUE
 #
 
-
 class User < ActiveRecord::Base
   has_one :profile, dependent: :destroy
   has_many :courses, foreign_key: "instructor_id"
