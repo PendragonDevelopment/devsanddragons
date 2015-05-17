@@ -14,7 +14,6 @@
 #  index_profile_levels_on_profile_id  (profile_id)
 #
 
-
 class ProfileLevel < ActiveRecord::Base
   belongs_to :level
   belongs_to :profile

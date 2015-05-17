@@ -10,7 +10,6 @@
 #  updated_at :datetime         not null
 #
 
-
 class Level < ActiveRecord::Base
   has_many :profile_levels, dependent: :destroy
   has_many :profiles, through: :profile_levels

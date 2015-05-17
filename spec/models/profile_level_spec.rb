@@ -15,6 +15,7 @@
 #
 
 
+
 require 'rails_helper'
 
 RSpec.describe ProfileLevel, type: :model do

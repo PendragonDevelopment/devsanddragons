@@ -16,16 +16,16 @@
 #  index_missions_on_campaign_id  (campaign_id)
 #
 
-
 class Mission < ActiveRecord::Base
   belongs_to :campaign
   has_many :quests, dependent: :destroy
+  validates :title, :description, :completion_xp, :campaign_id, presence: :true
 
   def required_quests
-    self.quests.where(required: true)
+    quests.where(required: true)
   end
 
-  def completed?
-    required_quests
-  end
+  # def completed?
+  #   required_quests
+  # end
 end

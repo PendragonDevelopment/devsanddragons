@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150516183704) do
+ActiveRecord::Schema.define(version: 20150516233913) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -80,13 +80,13 @@ ActiveRecord::Schema.define(version: 20150516183704) do
 
   create_table "profile_statuses", force: :cascade do |t|
     t.integer  "current_course"
-    t.hstore   "current_campaigns"
-    t.hstore   "current_missions"
     t.hstore   "completed"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
     t.integer  "profile_id"
     t.integer  "current_level"
+    t.string   "current_campaigns", default: [],              array: true
+    t.string   "current_missions",  default: [],              array: true
   end
 
   add_index "profile_statuses", ["profile_id"], name: "index_profile_statuses_on_profile_id", using: :btree
@@ -105,6 +105,7 @@ ActiveRecord::Schema.define(version: 20150516183704) do
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
     t.string   "name"
+    t.text     "bio"
   end
 
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id", using: :btree

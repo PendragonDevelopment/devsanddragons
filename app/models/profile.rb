@@ -16,6 +16,7 @@
 #  avatar_file_size    :integer
 #  avatar_updated_at   :datetime
 #  name                :string
+#  bio                 :text
 #
 # Indexes
 #
@@ -37,7 +38,7 @@ class Profile < ActiveRecord::Base
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
   def current_quests
-    profile_quests.in_progress
+    quests.joins(:profile_quests).where(profile_quests: {status: 0})
   end
 
   def set_default_title
@@ -58,5 +59,16 @@ class Profile < ActiveRecord::Base
 
   def level_up?
     xp >= profile_status.current_level ? profile_status.update_attributes!(current_level: current_level.next_level) : profile_status.current_level
+  end
+
+  def add_to_course(course)
+    profile_status.update_attributes(current_course: course.id)
+    campaigns = course.campaigns.includes(:missions, :quests)
+    campaigns.each do |campaign|
+      self.current_campaigns << campaign
+      self.current_missions << campaign.missions
+      self.current_missions.flatten
+      campaign.quests.each {|quest| ProfileQuest.create!(profile: self, quest: quest, status: "in_progress")}
+    end
   end
 end

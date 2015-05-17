@@ -20,6 +20,7 @@
 #
 
 
+
 FactoryGirl.define do
   factory :quest do
     title "MyString"

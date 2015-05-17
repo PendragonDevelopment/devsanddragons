@@ -15,6 +15,7 @@
 #
 
 
+
 FactoryGirl.define do
   factory :profile_level do
     level nil

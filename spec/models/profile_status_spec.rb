@@ -4,18 +4,19 @@
 #
 #  id                :integer          not null, primary key
 #  current_course    :integer
-#  current_campaigns :hstore
-#  current_missions  :hstore
 #  completed         :hstore
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
 #  profile_id        :integer
 #  current_level     :integer
+#  current_campaigns :string           default([]), is an Array
+#  current_missions  :string           default([]), is an Array
 #
 # Indexes
 #
 #  index_profile_statuses_on_profile_id  (profile_id)
 #
+
 
 
 require 'rails_helper'

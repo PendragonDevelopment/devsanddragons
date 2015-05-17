@@ -5,7 +5,7 @@ class CampaignsController < ApplicationController
       @course = Course.find(params[:course_id])
       @campaigns = @course.campaigns
     else
-      @campaigns = Campaign.all
+      @campaigns = Campaign.all.includes(:missions, :quests)
     end
   end
 
