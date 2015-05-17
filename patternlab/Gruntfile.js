@@ -3,7 +3,7 @@ var pkgjson = require('./package.json');
 var config = {
   pkg: pkgjson,
   app: 'src',
-  dist: 'dist'
+  dist: '../app/assets/'
 };
 
 module.exports = function(grunt) {
@@ -19,7 +19,14 @@ module.exports = function(grunt) {
       },
       patterngenerate: {
         command: "php core/builder.php -g"
-      }
+      },
+      rsync: {
+        command: [
+          "rsync -vr public/images/ " + config.dist + "/images/",
+          "rsync -vr public/css/ " + config.dist + "/stylesheets/",
+          "rsync -vr public/js/main.min.js " + config.dist + "/javascripts/main.min.js",
+        ].join('&&')
+      },
     },
     sass: {
       options: {
@@ -100,6 +107,5 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-notify');
 
   // Tasks
-  grunt.registerTask('default', [ 'connect', 'uglify', 'sass', 'shell:patternlab', 'watch' ]);
-  grunt.registerTask('no-server', [ 'uglify', 'sass', 'shell:patternlab', 'watch' ]);
+  grunt.registerTask('default', [ 'connect', 'uglify', 'sass', 'shell:patternlab', 'shell:rsync', 'watch' ]);
 };
