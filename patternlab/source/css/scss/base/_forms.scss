@@ -1,3 +1,12 @@
+form {
+  width: 100%;
+  max-width: 99%;
+
+  @media all and (min-width: $large-screen) {
+    max-width: 75%;
+  }
+}
+
 fieldset {
   border: none;
   margin: 0 0 ($base-spacing / 2) 0;
@@ -30,8 +39,8 @@ textarea,
 select[multiple=multiple] {
   @include box-sizing(border-box);
   @include transition(border-color);
-  background-color: lighten(gray, 30%);
-  color: $dark-gray;
+  background-color: darken($white, 5);
+  color: darken($dark-gray, 10);
   border-radius: $form-border-radius;
   border: 0px solid $form-border-color;
   box-shadow: $form-box-shadow;
@@ -49,7 +58,7 @@ select[multiple=multiple] {
     border-color: $form-border-color-focus;
     box-shadow: $form-box-shadow-focus;
     outline: none;
-    background-color: $white;
+    background-color: lighten($white, 5);
   }
 }
 

@@ -5,13 +5,13 @@ $primaryTextColor:   #212121;
 $secondaryTextColor: #C9CEDC;
 $dividerColor:       #8A3B2F;
 $black:              #0C0C0C;
-$white:              #F1F0FF;
+$white:              #F5F5F5;
 $dark-gray: lighten($black, 50);
 
 $alert-color: #FFEB3B;
-$error-color: #E91E63;
+$error-color: #a94442;
 $success-color: #4CAF50;
-$notice-color: lighten($accentColor, 40);
+$notice-color: lighten($accentColor, 10);
 
 // Base Colors
 $base-font-color: $primaryTextColor;
@@ -32,6 +32,6 @@ $footer-link-color: transparentize($footer-color, 0.2);
 $footer-disclaimer-color: transparentize($footer-color, 0.2);
 
 // Border color
-$base-border-color: $dividerColor;
+$base-border-color: darken($accentColor, 1);
 $featured-border-color: $accentColor;
 $base-border: 1px solid $base-border-color;

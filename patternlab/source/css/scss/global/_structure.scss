@@ -53,10 +53,7 @@ header, section, footer {
 .wrapper {
   @include outer-container;
   padding: 1.5rem;
-
-  @include media($large-screen) {
-    padding: 2rem 0;
-  }
+  width: 100%;
 }
 
 .wrapper--text {
@@ -69,7 +66,7 @@ header, section, footer {
   @include omega;
 }
 
-.sidebar--main + .main {
+.sidebar--main + .content {
   @include shift(3.4);
   @include media($medium-screen) {
     @include shift(2.55);
@@ -79,10 +76,21 @@ header, section, footer {
   }
 }
 
-.main {
+.content {
   @include omega;
   @include transition-property(width);
   @include transition-duration(0.25s);
   @include transition-timing-function(ease-in);
   @include transition-delay(0);
+  min-height: 100%;
+  min-height: 100vh;
+}
+
+.main {
+  @include omega;
+  @include display(flex);
+  @include flex-direction(column);
+  height: 100%;
+  min-height: 100%;
+  min-height: 50vh;
 }

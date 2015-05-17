@@ -7,7 +7,7 @@
   @include transition-duration(0.25s);
   @include transition-timing-function(ease-in);
   @include transition-delay(0);
-  background-color: $darkPrimaryColor;
+  background-color: lighten($black, 10);
   font-size: 14px;
   height: 100vh;
 
@@ -28,11 +28,11 @@
 }
 
 .logo--sidebar {
-  background-color: lighten($darkPrimaryColor, 20);
+  background-color: $black;
 
   .logo {
     max-height: 10rem;
-    fill: $lightPrimaryColor;
+    fill: lighten($black, 10);
     padding: $pad $pad-half $pad-half;
   }
 }

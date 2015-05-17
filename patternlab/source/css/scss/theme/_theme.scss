@@ -12,55 +12,12 @@
 
 .game-title { 
   color: $dividerColor;
+  padding: 0 $pad-quarter;
 }
 
 .emphasis {
   color: $darkPrimaryColor;
   font-weight: bold;
-}
-
-.search-form {
-  padding: $pad;
-
-  .wrapper--inputs {
-    @extend %flex__wrapper;
-    @include justify-content(center);
-    @include align-items(center);
-
-    text-align: left;
-
-    [class^="input--"] {
-      @extend %flex__box;
-      @include flex(2 2 15em);
-      display: block;
-      margin: $flex-box-gutter;
-    }
-
-    .input--action {
-      @media all and (min-width: $large-screen) {
-        @include flex(2);
-      }
-    }
-
-    .button__search {
-      @extend %button--large;
-      width: 100%;
-      @media all and (min-width: $large-screen) {
-        margin-top: 1em;
-      }
-    }
-  }
-}
-
-.about {
-  font-size: 19px;
-  .title { 
-    color: $darkPrimaryColor;
-    margin-top: 1em;
-  }
-  ul, ol {
-    @extend %default-ul;
-  }
 }
 
 .block--cta {

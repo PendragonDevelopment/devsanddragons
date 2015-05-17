@@ -81,7 +81,7 @@ module.exports = function(grunt) {
             'source/js/plugins/*.js',
             'source/js/src/*.js',
           ],
-          tasks: [ 'uglify', 'shell:patterngenerate', 'sass' ],
+          tasks: [ 'uglify', 'shell:patterngenerate', 'sass', 'shell:rsync' ],
       },
       css: {
           files: [
@@ -89,7 +89,7 @@ module.exports = function(grunt) {
             'source/css/**/*.scss',
             'public/styleguide/css/**/*.scss'
           ],
-          tasks: [ 'sass' ]
+          tasks: [ 'sass', 'shell:rsync' ]
       },
       options: {
           spawn: false,

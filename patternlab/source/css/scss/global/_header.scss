@@ -10,7 +10,10 @@
   }
 
   .game-title {
-    text-align: left;
-    font-size: 1em;
+    line-height: 1;
+    
+    @include media($medium-screen) {
+      line-height: 2;
+    }
   }
 }

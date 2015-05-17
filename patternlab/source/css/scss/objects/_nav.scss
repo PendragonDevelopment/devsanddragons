@@ -31,6 +31,7 @@ nav {
 
 .navigation--primary {
   display: inline-block;
+  padding: $pad-half; 
 
   .navigation-menu {
     width: 100%;
@@ -51,8 +52,9 @@ nav {
   a {
     font-weight: bold;
     display: inline-block;
-    padding: $pad-half $pad;
+    padding: $pad-half $pad-quarter;
     height: 100%;
+    width: 100%;
 
     &:focus,
     &:hover {
