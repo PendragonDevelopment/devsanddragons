@@ -18,5 +18,6 @@
 class Campaign < ActiveRecord::Base
   belongs_to :course
   has_many :missions, dependent: :destroy
+  has_many :quests, through: :missions
   validates :title, :completion_xp, presence: :true
 end

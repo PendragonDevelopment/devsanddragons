@@ -22,10 +22,10 @@ class Mission < ActiveRecord::Base
   validates :title, :description, :completion_xp, :campaign_id, presence: :true
 
   def required_quests
-    self.quests.where(required: true)
+    quests.where(required: true)
   end
 
-  def completed?
-    required_quests
-  end
+  # def completed?
+  #   required_quests
+  # end
 end
