@@ -1,0 +1,38 @@
+.sidebar {
+  @include span-columns(4);
+  @include omega;
+  @include display(flex);
+  @include flex-direction(column);
+  @include transition-property(width);
+  @include transition-duration(0.25s);
+  @include transition-timing-function(ease-in);
+  @include transition-delay(0);
+  background-color: lighten($black, 10);
+  font-size: 14px;
+  height: 100vh;
+
+  @include media($medium-screen) {
+    font-size: 16px;
+    @include span-columns(3);
+    @include omega;
+  }
+  @include media($large-screen) {
+    @include span-columns(2);
+    @include omega;
+  }
+}
+
+.sidebar--main {
+  @extend .sidebar;
+  position: fixed;
+}
+
+.logo--sidebar {
+  background-color: $black;
+
+  .logo {
+    max-height: 10rem;
+    fill: lighten($black, 10);
+    padding: $pad $pad-half $pad-half;
+  }
+}

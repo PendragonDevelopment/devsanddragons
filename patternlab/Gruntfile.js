@@ -3,7 +3,7 @@ var pkgjson = require('./package.json');
 var config = {
   pkg: pkgjson,
   app: 'src',
-  dist: 'dist'
+  dist: '../app/assets/'
 };
 
 module.exports = function(grunt) {
@@ -19,7 +19,14 @@ module.exports = function(grunt) {
       },
       patterngenerate: {
         command: "php core/builder.php -g"
-      }
+      },
+      rsync: {
+        command: [
+          "rsync -vr public/images/ " + config.dist + "/images/",
+          "rsync -vr public/css/ " + config.dist + "/stylesheets/",
+          "rsync -vr public/js/main.min.js " + config.dist + "/javascripts/main.min.js",
+        ].join('&&')
+      },
     },
     sass: {
       options: {
@@ -54,7 +61,7 @@ module.exports = function(grunt) {
     connect: {
       server: {
         options: {
-          port: 8080,
+          port: 8081,
           hostname: 'localhost',
           base: 'public/'
         }
@@ -74,7 +81,7 @@ module.exports = function(grunt) {
             'source/js/plugins/*.js',
             'source/js/src/*.js',
           ],
-          tasks: [ 'uglify', 'shell:patterngenerate', 'sass' ],
+          tasks: [ 'uglify', 'shell:patterngenerate', 'sass', 'shell:rsync' ],
       },
       css: {
           files: [
@@ -82,7 +89,7 @@ module.exports = function(grunt) {
             'source/css/**/*.scss',
             'public/styleguide/css/**/*.scss'
           ],
-          tasks: [ 'sass' ]
+          tasks: [ 'sass', 'shell:rsync' ]
       },
       options: {
           spawn: false,
@@ -100,6 +107,5 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-notify');
 
   // Tasks
-  grunt.registerTask('default', [ 'connect', 'uglify', 'sass', 'shell:patternlab', 'watch' ]);
-  grunt.registerTask('no-server', [ 'uglify', 'sass', 'shell:patternlab', 'watch' ]);
+  grunt.registerTask('default', [ 'connect', 'uglify', 'sass', 'shell:patternlab', 'shell:rsync', 'watch' ]);
 };

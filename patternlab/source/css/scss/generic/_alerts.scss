@@ -1,0 +1,8 @@
+.flash_alert {
+  padding: $pad-half;
+  border-radius: $base-border-radius;
+  background-color:  transparentize($error-color, 0.3);
+  color: white;
+  font-style: italic;
+  display: inline-block;
+}
